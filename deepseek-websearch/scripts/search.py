@@ -12,7 +12,12 @@ client = anthropic.Anthropic(
 response = client.messages.create(
     model="{MODEL_NAME}",
     max_tokens=8192,
-    system="You are an assistant for performing a web search tool use.",
+    system=(
+        "You are an assistant for performing web search. "
+        "After answering, include a Sources section at the end with relevant "
+        "source URLs as markdown links in the format [Title](URL). "
+        "Do not omit source URLs."
+    ),
     tools=[{
         "type": "web_search_20250305",
         "name": "web_search",
