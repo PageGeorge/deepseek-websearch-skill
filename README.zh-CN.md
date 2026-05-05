@@ -8,7 +8,7 @@
 https://github.com/PageGeorge/deepseek-websearch-skill
 ```
 
-安装过程中，Agent 应该向你询问所需的 API key，然后把这个值写入本地安装后的 Skill 副本。
+安装过程中，Agent 应该向你询问所需的 API key 和模型名称，然后把这些值写入本地安装后的 Skill 副本。
 
 ## 功能
 
@@ -22,11 +22,12 @@ https://github.com/PageGeorge/deepseek-websearch-skill
 
 请让你的 Agent 使用上面的仓库地址安装这个 Skill。
 
-Agent 会需要你提供一个值：
+Agent 会需要你提供两个值：
 
 | 值 | 说明 |
 |---|---|
 | API key | 你的 DeepSeek API key |
+| 模型名称 | 要使用的 DeepSeek 模型，例如 `deepseek-v4-pro` |
 
 安装完成后，只需要提出需要搜索的问题。当 Agent 判断需要进行网页搜索时，这个 Skill 应该会自动触发。
 
@@ -55,11 +56,12 @@ python3 -m pip install anthropic
 
 如果用户电脑上只有 `python`，并且它指向 Python 3，可以把下面命令中的 `python3` 替换为 `python`。
 
-然后配置本地已安装的副本，替换 `deepseek-websearch/scripts/search.py` 中的占位符：
+然后配置本地已安装的副本，替换 `deepseek-websearch/scripts/search.py` 中的这些占位符：
 
 | 占位符 | 替换为 |
 |---|---|
 | `{API_KEY}` | 用户的 DeepSeek API key |
+| `{MODEL_NAME}` | 用户的 DeepSeek 模型名称 |
 
 写入凭据后，不要提交或发布用户本地配置过的 `search.py`。
 

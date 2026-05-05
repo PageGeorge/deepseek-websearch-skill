@@ -10,7 +10,7 @@ client = anthropic.Anthropic(
 )
 
 response = client.messages.create(
-    model="deepseek-v4-pro",
+    model="{MODEL_NAME}",
     max_tokens=8192,
     system="You are an assistant for performing a web search tool use.",
     tools=[{

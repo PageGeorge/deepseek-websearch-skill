@@ -8,7 +8,7 @@ This repository is designed to be installed by an agent. As a human user, you us
 https://github.com/PageGeorge/deepseek-websearch-skill
 ```
 
-During installation, the agent should ask you for the required API key, then write that value into the local copy of the skill.
+During installation, the agent should ask you for the required API key and model name, then write those values into the local copy of the skill.
 
 ## What It Does
 
@@ -22,11 +22,12 @@ During installation, the agent should ask you for the required API key, then wri
 
 Ask your agent to install this skill from the repository URL above.
 
-The agent will need one value from you:
+The agent will need two values from you:
 
 | Value | Description |
 |---|---|
 | API key | Your DeepSeek API key |
+| Model name | The DeepSeek model to use, for example `deepseek-v4-pro` |
 
 After installation, just ask a question that requires web search. The skill should trigger automatically when the agent determines that web search is needed.
 
@@ -55,11 +56,12 @@ python3 -m pip install anthropic
 
 If the machine only provides `python` and it points to Python 3, use `python` instead of `python3`.
 
-Then configure the local installed copy by replacing this placeholder in `deepseek-websearch/scripts/search.py`:
+Then configure the local installed copy by replacing these placeholders in `deepseek-websearch/scripts/search.py`:
 
 | Placeholder | Replace with |
 |---|---|
 | `{API_KEY}` | The user's DeepSeek API key |
+| `{MODEL_NAME}` | The user's DeepSeek model name |
 
 Do not commit or publish the user's configured `search.py` after inserting credentials.
 
